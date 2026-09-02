@@ -25,6 +25,17 @@ npm run build    # build di produzione in dist/
 npm run preview  # anteprima locale del build
 ```
 
+## Deploy (GitHub Pages)
+
+Il deploy è automatico via **GitHub Actions**: a ogni push su `main` (o lanciandolo a
+mano da _Actions → Deploy to GitHub Pages_) il workflow `.github/workflows/deploy.yml`
+esegue `npm ci` + `npm run build` e pubblica `dist/` su GitHub Pages.
+
+URL finale (project pages): **https://allsafeitalia.github.io/landingpage/**
+
+> `base: './'` in `vite.config.js` mantiene i percorsi degli asset relativi, così il
+> sito funziona correttamente servito da una sottocartella.
+
 ## Struttura
 
 ```
